@@ -51,7 +51,7 @@ describe("source maps", function () {
       genCol: any,
       lastColumn: any,
     ) {
-      assert.deepEqual(
+      assert.deepStrictEqual(
         smc.originalPositionFor({
           line: genLine,
           column: genCol,
@@ -64,7 +64,7 @@ describe("source maps", function () {
         },
       );
 
-      assert.deepEqual(
+      assert.deepStrictEqual(
         smc.generatedPositionFor({
           source: sourceRoot + "/source.js",
           line: origLine,
@@ -161,7 +161,7 @@ describe("source maps", function () {
       // The composition of the source maps generated separately from
       // the two transforms should be equivalent to the source map
       // generated from the composition of the two transforms.
-      assert.deepEqual(orig1, orig2);
+      assert.deepStrictEqual(orig1, orig2);
 
       // Make sure the two-step source map refers back to the original
       // source instead of the intermediate source.
@@ -201,8 +201,8 @@ describe("source maps", function () {
     });
 
     assert.strictEqual(result.map.file, "foo.map.json");
-    assert.deepEqual(result.map.sources, []);
-    assert.deepEqual(result.map.names, []);
+    assert.deepStrictEqual(result.map.sources, []);
+    assert.deepStrictEqual(result.map.names, []);
     assert.strictEqual(result.map.mappings, "");
   });
 });

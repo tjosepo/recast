@@ -46,7 +46,7 @@ describe("types.visit", function () {
     };
 
     types.visit(ast, methods);
-    assert.deepEqual(propNames, ["bar", "baz"]);
+    assert.deepStrictEqual(propNames, ["bar", "baz"]);
 
     types.visit(ast, {
       visitProperty: function (path) {
@@ -66,7 +66,7 @@ describe("types.visit", function () {
     propNames.length = 0;
 
     types.visit(ast, methods);
-    assert.deepEqual(propNames, ["bar"]);
+    assert.deepStrictEqual(propNames, ["bar"]);
   });
 
   it("reindent", function () {

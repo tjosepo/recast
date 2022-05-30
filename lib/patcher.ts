@@ -288,7 +288,7 @@ function findReprints(newPath: any, reprints: any) {
   const oldNode = newNode.original;
   Printable.assert(oldNode);
 
-  assert.deepEqual(reprints, []);
+  assert.deepStrictEqual(reprints, []);
 
   if (newNode.type !== oldNode.type) {
     return false;

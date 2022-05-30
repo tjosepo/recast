@@ -288,7 +288,7 @@ describe("lines", function () {
       assert.strictEqual(loc.end.line, strings.length);
       assert.strictEqual(loc.end.column, lastLine.length);
 
-      assert.deepEqual(
+      assert.deepStrictEqual(
         loc,
         getSourceLocation(indented.slice(loc.start, loc.end)),
       );
